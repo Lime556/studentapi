@@ -1,21 +1,21 @@
-package UniOrg.Student_Shit;
+package com.example.studentapi.model;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Student {
-    String name;
-    int StudentID;
-    double GPA;
-    String major;
-    static int IDcounter = 0;
+    private String name;
+    private int StudentID;
+    private double GPA;
+    private String major;
+    private static int IDcounter = 0;
     Map<Course, Double> grades = new HashMap<>();
 
-    public Student(String name, int GPA, String major) {
+    public Student(int StudentId, String name, double GPA, String major) {
         this.name = name;
         this.GPA = GPA;
         this.major = major;
-        this.StudentID = generateID();
+        this.StudentID = generateID(); //use generateID() for automated ID generation
     }
 
     public static int generateID() {
@@ -23,6 +23,7 @@ public class Student {
         return IDcounter;
     } 
 
+    @Override
     public String toString() {
         return "Name: " + this.name + ", Major: " + this.major + ", GPA: " + this.GPA;
     }
@@ -58,5 +59,25 @@ public class Student {
     public Map<Course, Double> getGrades() {
         return grades;
     }
- 
+    
+    public int getId() {
+        return StudentID;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public double getGPA() {
+        return GPA;
+    }
+    
+    public String getMajor() {
+        return major;
+    }
+
+    public void updateName(String name) {
+        this.name = name;
+    }
+    
 }

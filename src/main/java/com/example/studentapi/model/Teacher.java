@@ -1,4 +1,4 @@
-package UniOrg.Student_Shit;
+package com.example.studentapi.model;
 
 import java.util.HashMap;
 import java.util.Map;
